@@ -17,9 +17,13 @@ app.use(express.static("public"));
 
 let posts = [];
 
-posts.forEach(item => {
-  _.kebabCase(item.tite);
-});
+function truncateString(str) {
+  if (str.length > 100) {
+    return str.slice(0, 100) + "...";
+  } else {
+    return str;
+  }
+}
 
 
 app.get("/", function(req, res){

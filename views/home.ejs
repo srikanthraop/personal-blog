@@ -7,8 +7,11 @@
       <%= item.title %>
     </h1>
     <p>
-      <%= item.body %>
+      <%= item.body.substring(0,100) + "..."%>
+
+      <a href= "/posts/<%=item.title %>"> Read More</a>
     </p>
+
   <% }) %>
-  
+
 <%- include("partials/footer") -%>
